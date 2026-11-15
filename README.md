@@ -5,7 +5,7 @@ This repository provides the code for **Vision-Language Model Guided Heterogeneo
 ## 1. Code Structure
 
 ```text
-HDDC_github/
+HDDC/
 ├── prompt_tuning/               # Prompt embedding fine-tuning
 │   ├── model.py                 # Learnable Text 1 embeddings
 │   ├── data.py                  # Images and ranking annotations
