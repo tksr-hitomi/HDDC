@@ -1,0 +1,26 @@
+input:
+  # Input images for which the four DDMs will be generated.
+  raw_dir: ./data/train_dataset/raw
+
+output:
+  # Use this as the ddm_dir for training or inference.
+  ddm_dir: ./data/train_dataset/ddm
+  save_smooth: true
+  save_blocky: false
+  save_csv: false
+  overwrite: false
+
+generation:
+  target_size: 256
+  grid_size: 32
+  blur_radius_factor: 0.5
+
+clip:
+  model_name: ViT-B-32
+  pretrained: laion2b_s34b_b79k
+  # Optional local OpenCLIP/Hugging Face cache directory.
+  cache_dir: null
+
+runtime:
+  device: cuda
+

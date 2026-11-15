@@ -1,0 +1,42 @@
+{
+  "your_images/example_green.png": {
+    "labels": [1, 0, 0, 0],
+    "primary_index": 0
+  },
+  "your_images/example_blue.png": {
+    "labels": [0, 1, 0, 0],
+    "primary_index": 1
+  },
+  "your_images/example_hazy.png": {
+    "labels": [0, 0, 1, 0],
+    "primary_index": 2
+  },
+  "your_images/example_dark.png": {
+    "labels": [0, 0, 0, 1],
+    "primary_index": 3
+  },
+  "your_images/example_green_hazy.png": {
+    "labels": [1, 0, 1, 0],
+    "primary_index": 0
+  },
+  "your_images/example_blue_dark.png": {
+    "labels": [0, 1, 0, 1],
+    "primary_index": 1
+  },
+  "your_images/example_hazy_blue.png": {
+    "labels": [0, 1, 1, 0],
+    "primary_index": 2
+  },
+  "your_images/example_dark_hazy.png": {
+    "labels": [0, 0, 1, 1],
+    "primary_index": 3
+  },
+  "your_images/example_blue_hazy_dark.png": {
+    "labels": [0, 1, 1, 1],
+    "primary_index": 1
+  },
+  "your_images/example_dark_green_hazy.png": {
+    "labels": [1, 0, 1, 1],
+    "primary_index": 3
+  }
+}

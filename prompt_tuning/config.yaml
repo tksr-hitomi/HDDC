@@ -1,0 +1,25 @@
+data:
+  # Replace this fictional example with your own private annotation JSON.
+  annotations: ./prompt_tuning/annotations.example.json
+  # Relative JSON keys are resolved from this directory.
+  image_root: .
+  batch_size: 16
+  num_workers: 0
+
+clip:
+  model_name: ViT-B-32
+  pretrained: laion2b_s34b_b79k
+  # Optional local OpenCLIP/Hugging Face cache directory.
+  cache_dir: null
+
+training:
+  epochs: 100
+  learning_rate: 5.0e-5
+  margin: 0.1
+  seed: 42
+  device: cuda
+
+output:
+  # Directory for generated prompt weights; separate from released weights.
+  output_dir: ./prompt_tuning/outputs
+  overwrite: false

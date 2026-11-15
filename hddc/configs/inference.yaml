@@ -1,0 +1,36 @@
+dataset:
+  name: test_dataset
+  # Input RGB images and their four matching DDMs; no references are needed.
+  raw_dir: ./data/test_dataset/raw
+  ddm_dir: ./data/test_dataset/ddm
+  ratio: 1.0
+  # Set an integer only when an exact sample-count check is needed.
+  expected_samples: null
+  image_size: 256
+  batch_size: 1
+  num_workers: 0
+
+model:
+  input_channels: 3
+  output_channels: 3
+  base_channels: 32
+  router_hidden_factor: 0.5
+  # Pretrained enhancement weights.
+  checkpoint: ./hddc/weights/hddc.pth
+
+clip:
+  model_name: ViT-B-32
+  pretrained: laion2b_s34b_b79k
+  # Text 1 prompt weights used by DCAR.
+  prompt_checkpoint: ./prompt_tuning/weights/ranking_prompts.pth
+  cache_dir: null
+
+output:
+  # Enhanced images are saved here.
+  directory: ./hddc/outputs/inference/test_dataset
+  overwrite: false
+
+runtime:
+  device: cuda
+  clip_device: cuda
+

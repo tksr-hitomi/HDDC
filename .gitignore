@@ -1,0 +1,14 @@
+*.pth
+*.pt
+*.ckpt
+*.pyc
+__pycache__/
+**/outputs/
+data/
+.venv/
+.vscode/
+*.log
+*.zip
+prompt_tuning/*.json
+!prompt_tuning/annotations.example.json
+prompt_tuning/annotations/

@@ -1,0 +1,54 @@
+dataset:
+  train:
+    name: train_dataset
+    # Input images, paired reference images, and their four DDMs.
+    raw_dir: ./data/train_dataset/raw
+    reference_dir: ./data/train_dataset/reference
+    ddm_dir: ./data/train_dataset/ddm
+    ratio: 1.0
+    # Optional sample-count check; null accepts the available paired samples.
+    expected_samples: null
+  test:
+    name: test_dataset
+    # Paired test data used for the per-epoch PSNR evaluation.
+    raw_dir: ./data/test_dataset/raw
+    reference_dir: ./data/test_dataset/reference
+    ddm_dir: ./data/test_dataset/ddm
+    ratio: 1.0
+    expected_samples: null
+  image_size: 256
+  batch_size: 4
+  num_workers: 0
+  seed: 42
+
+model:
+  input_channels: 3
+  output_channels: 3
+  base_channels: 32
+  router_hidden_factor: 0.5
+
+clip:
+  model_name: ViT-B-32
+  pretrained: laion2b_s34b_b79k
+  # Released or privately trained Text 1 prompt weights.
+  prompt_checkpoint: ./prompt_tuning/weights/ranking_prompts.pth
+  cache_dir: null
+
+training:
+  epochs: 200
+  learning_rate: 0.0001
+  scheduler_start_epoch: 40
+  scheduler_eta_min: 0.000001
+  smooth_l1_weight: 1.0
+  smooth_l1_beta: 1.0
+  ssim_weight: 0.09
+  ssim_data_range: 1.0
+  ssim_window_size: 11
+  # New checkpoints and the PSNR log are written here.
+  output_dir: ./hddc/outputs/train
+  resume: null
+
+runtime:
+  device: cuda
+  clip_device: cuda
+
